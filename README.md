@@ -2,6 +2,6 @@
 I m making a tic tac toe game , its going tough for me right now , but i hope i'll make it a good one.
 
 Tech used - 
--HTML
--CSS
--JavaScript
+- HTML
+- CSS
+- JavaScript
