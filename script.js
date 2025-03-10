@@ -55,124 +55,139 @@ let player = (name) => {
 }
 
 let array = [[-1, -1, -1], [-1, -1, -1], [-1, -1, -1]]
-let count =1
+let count = 1
 const boxes = document.querySelectorAll(".box");
 
 
-const game = (()=>{
-function checkwin() {
-    // checking for win in rows
-    for (let i = 0; i < 3; i++) {
-        crossCount = 0;
-        zeroCount = 0;
-        for (let j = 0; j < 3; j++) {
-            if (array[i][j] == 1) {
-                crossCount++;
+const game = (() => {
+    function checkwin() {
+        // checking for win in rows
+        for (let i = 0; i < 3; i++) {
+            crossCount = 0;
+            zeroCount = 0;
+            for (let j = 0; j < 3; j++) {
+                if (array[i][j] == 1) {
+                    crossCount++;
+                }
+                else if (array[i][j] == 0) {
+                    zeroCount++
+                }
+                else {
+                    break;
+                }
             }
-            else if (array[i][j] == 0) {
-                zeroCount++
-            }
-            else {
-                break;
-            }
+            if (crossCount == 3) return 1;
+            if (zeroCount == 3) return 0;
         }
-        if (crossCount == 3) return 1;
-        if (zeroCount == 3) return 0;
-    }
 
 
-    // check for all column
-    for (let i = 0; i < 3; i++) {
-        crossCount = 0;
-        zeroCount = 0;
-        for (let j = 0; j < 3; j++) {
-            if (array[j][i] == 1) crossCount++;
-            else if (array[j][i] == 0) zeroCount++;
-            else break;
+        // check for all column
+        for (let i = 0; i < 3; i++) {
+            crossCount = 0;
+            zeroCount = 0;
+            for (let j = 0; j < 3; j++) {
+                if (array[j][i] == 1) crossCount++;
+                else if (array[j][i] == 0) zeroCount++;
+                else break;
+            }
+            if (crossCount == 3) return 1;
+            if (zeroCount == 3) return 0;
         }
-        if (crossCount == 3) return 1;
-        if (zeroCount == 3) return 0;
+
+        // check for diagonals
+        if (array[0][0] == array[1][1] && array[1][1] == array[2][2] && array[1][1] == 1) return 1;
+        else if (array[0][0] == array[1][1] && array[0][0] == array[2][2] && array[0][0] == 0) return 0;
+
+        // 2nd diagonal
+        if (array[0][2] == array[1][1] && array[0][2] == array[2][0] && array[0][2] == 1)
+            return 1;
+        else if (array[0][2] == array[1][1] && array[0][2] == array[2][0] && array[0][2] == 0)
+            return 0;
+
+        return -1;
     }
 
-    // check for diagonals
-    if (array[0][0] == array[1][1] && array[1][1] == array[2][2] && array[1][1] == 1) return 1;
-    else if (array[0][0] == array[1][1] && array[0][0] == array[2][2] && array[0][0] == 0) return 0;
-
-    // 2nd diagonal
-    if (array[0][2] == array[1][1] && array[0][2] == array[2][0] && array[0][2] == 1)
-        return 1;
-    else if (array[0][2] == array[1][1] && array[0][2] == array[2][0] && array[0][2] == 0)
-        return 0;
-
-    return -1;
-}
 
 
-
-function decwinner(res) {
-    if (res == 1) alert("x has won")
-    else if (res == 0) alert("0 has won")
-    else alert("its draw")
-}
-
-let xturn = true
-
-function addCross(e, row, col) {
-    if (array[row - 1][col - 1] === -1) {
-        const cross = document.createElement('img')
-        cross.src = "cross.png"
-        cross.style.width = "50px"
-        let id = e.target.id;
-        const clickedBox = document.getElementById(`${id}`)
-        clickedBox.appendChild(cross);
-        array[row - 1][col - 1] = 1;
-        xturn = false
-        count++
-    }
-}
-
-
-
-function addZero(e, row, col) {
-    if (array[row - 1][col - 1] === -1) {
-        const zero = document.createElement('img');
-        zero.src = "zero.png";
-        zero.style.width = "50px";
-        zero.classList.add('zerocross');
-        let id = e.target.id;
-        const clickedBox = document.getElementById(`${id}`);
-        clickedBox.appendChild(zero);
-
-        array[row - 1][col - 1] = 0;
-        xturn = true;
-        count++;
-    }
-}
-
-
-function updategame(e){
-    const row = Number(e.target.id.charAt(0))
-    const col = Number(e.target.id.charAt(1))
-
-    if(count%2==1){
-        addCross(e,row,col)
-    }
-    else{
-        addZero(e,row,col)
+    function decwinner(res) {
+        if (res == 1) {
+            alert("X has won")
+            document.getElementById("status").innerHTML = "X has won"
+            document.getElementById("status").style.fontSize = '50px'
+            document.getElementById("status").style.color = 'white'
+            document.getElementById("status").style.fontFamily = 'Arial'
+        }
+        else if (res == 0) {
+            alert("O has won")
+            document.getElementById("status").innerHTML = "O has won"
+            document.getElementById("status").style.fontSize = '50px'
+            document.getElementById("status").style.color = 'white'
+            document.getElementById("status").style.fontFamily = 'Arial'
+        }
+        else {
+            document.getElementById("status").innerHTML = "It's a Draw !"
+            document.getElementById("status").style.fontSize = '50px'
+        }
     }
 
-    if(count>=5) {
-        const res = checkwin();  
-        if(res==1 || res==0 || count==10)
-           setTimeout(()=>{
-            decwinner(res);
-        },300)
+    let xturn = true
+
+    function addCross(e, row, col) {
+        if (array[row - 1][col - 1] === -1) {
+            const cross = document.createElement('img')
+            cross.src = "imgfold/cross.png"
+            cross.style.width = "70px"
+            let id = e.target.id;
+            const clickedBox = document.getElementById(`${id}`)
+            clickedBox.appendChild(cross);
+            array[row - 1][col - 1] = 1;
+            xturn = false
+            count++
+        }
     }
-}
 
 
-return {array,updategame};
-}) ()
+
+    function addZero(e, row, col) {
+        if (array[row - 1][col - 1] === -1) {
+            const zero = document.createElement('img');
+            zero.src = "imgfold/zero.png";
+            zero.style.width = "70px";
+            zero.classList.add('zerocross');
+            let id = e.target.id;
+            const clickedBox = document.getElementById(`${id}`);
+            clickedBox.appendChild(zero);
+
+            array[row - 1][col - 1] = 0;
+            xturn = true;
+            count++;
+        }
+    }
+
+
+    function updategame(e) {
+        const row = Number(e.target.id.charAt(0))
+        const col = Number(e.target.id.charAt(1))
+
+        if (count % 2 == 1) {
+            addCross(e, row, col)
+        }
+        else {
+            addZero(e, row, col)
+        }
+
+        if (count >= 5) {
+            const res = checkwin();
+            if (res == 1 || res == 0 || count == 10)
+                setTimeout(() => {
+                    decwinner(res);
+                }, 300)
+        }
+    }
+
+
+    return { array, updategame };
+})()
 
 
 
@@ -181,3 +196,20 @@ boxes.forEach(box => {
         game.updategame(e);
     });
 });
+
+
+function restart() {
+    boxes.forEach(e => {
+        e.innerHTML = ""
+    })
+    count = 1;
+    array = [[-1, -1, -1], [-1, -1, -1], [-1, -1, -1]];
+}
+
+document.getElementById("Restart").addEventListener("click", function () {
+    restart();
+    document.getElementById("Restart").classList.add("pressed");
+    setTimeout(() => {
+        document.getElementById("Restart").classList.remove("pressed")
+    }, 400);
+})
