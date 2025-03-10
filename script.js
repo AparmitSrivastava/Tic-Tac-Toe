@@ -107,28 +107,22 @@ const game = (() => {
         return -1;
     }
 
-
-
     function decwinner(res) {
-        if (res == 1) {
-            alert("X has won")
-            document.getElementById("status").innerHTML = "X has won"
-            document.getElementById("status").style.fontSize = '50px'
-            document.getElementById("status").style.color = 'white'
-            document.getElementById("status").style.fontFamily = 'Arial'
+        let message = "";
+
+        if (res === 1) {
+            message = "X Wins!";
+        } else if (res === 0) {
+            message = "O Wins!";
+        } else {
+            message = "It's a Draw!";
         }
-        else if (res == 0) {
-            alert("O has won")
-            document.getElementById("status").innerHTML = "O has won"
-            document.getElementById("status").style.fontSize = '50px'
-            document.getElementById("status").style.color = 'white'
-            document.getElementById("status").style.fontFamily = 'Arial'
-        }
-        else {
-            document.getElementById("status").innerHTML = "It's a Draw !"
-            document.getElementById("status").style.fontSize = '50px'
-        }
+        document.getElementById("winnerName").innerText = message;
+        document.getElementById("overlay").style.display = "flex";
+
     }
+
+
 
     let xturn = true
 
@@ -204,6 +198,7 @@ function restart() {
     })
     count = 1;
     array = [[-1, -1, -1], [-1, -1, -1], [-1, -1, -1]];
+    document.getElementById("overlay").style.display = "none"
 }
 
 document.getElementById("Restart").addEventListener("click", function () {
