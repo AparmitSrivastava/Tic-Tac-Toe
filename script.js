@@ -67,6 +67,8 @@ const game = (() => {
         }
         document.getElementById("overlay").style.display = "flex";
         document.getElementById("winnerName").innerText = message;
+        document.querySelector(".container").classList.add("blur")
+        document.querySelector("#mainGame .title").classList.add("blur");
     }
 
 
@@ -146,7 +148,10 @@ function restart() {
     count = 1;
     array = [[-1, -1, -1], [-1, -1, -1], [-1, -1, -1]];
     document.getElementById("overlay").style.display = "none"
+    document.querySelector(".container").classList.remove("blur")
+    document.querySelector("#mainGame .title").classList.remove("blur");
 }
+
 
 document.getElementById("Restart").addEventListener("click", function () {
     restart();
@@ -160,3 +165,6 @@ document.getElementById("start").addEventListener("click", function(){
     document.getElementById("starting").style.display="none"
     document.getElementById("container").style.display="block"
 })
+
+document.getElementById("Restart").style.marginTop="70px"
+document.getElementById("Restart").style.padding="20px"
