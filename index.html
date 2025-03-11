@@ -7,7 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+
+    <div id="starting">
+        <div id="startPage">
+            <h1 class="title">Tic Tac Toe</h1>
+            <button id="start">START the Game !</button>
+        </div>
+    </div>
+
+<div id="mainGame">
+    <div class="container" id="container">
+        <h1 class="title">Tic Tac Toe</h1>
         <div class="row1">
             <div class="box" id="11"></div>
             <div class="box" id="12"></div>
@@ -24,14 +34,15 @@
             <div class="box" id="33"></div>
         </div>
     </div>
+</div>
 
     <div id="overlay" class="overlay">
         <div class="overlay-content">
             <h2 id="winnerName"></h2>
-            <button id="Restart">Restart</button>
+            <button id="Restart">Play Again ?</button>
         </div>
     </div>
-    
+
     <script src="script.js"></script>
 </body>
 </html>

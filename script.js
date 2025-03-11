@@ -59,15 +59,14 @@ const game = (() => {
         let message = "";
 
         if (res === 1) {
-            message = "X Wins!";
+            message = "X has won the game!";
         } else if (res === 0) {
-            message = "O Wins!";
+            message = "O has won the game!";
         } else {
             message = "It's a Draw!";
         }
-        document.getElementById("winnerName").innerText = message;
         document.getElementById("overlay").style.display = "flex";
-
+        document.getElementById("winnerName").innerText = message;
     }
 
 
@@ -78,7 +77,7 @@ const game = (() => {
         if (array[row - 1][col - 1] === -1) {
             const cross = document.createElement('img')
             cross.src = "imgfold/cross.png"
-            cross.style.width = "70px"
+            cross.style.width = "100px"
             let id = e.target.id;
             const clickedBox = document.getElementById(`${id}`)
             clickedBox.appendChild(cross);
@@ -94,7 +93,7 @@ const game = (() => {
         if (array[row - 1][col - 1] === -1) {
             const zero = document.createElement('img');
             zero.src = "imgfold/zero.png";
-            zero.style.width = "70px";
+            zero.style.width = "100px";
             zero.classList.add('zerocross');
             let id = e.target.id;
             const clickedBox = document.getElementById(`${id}`);
@@ -155,4 +154,9 @@ document.getElementById("Restart").addEventListener("click", function () {
     setTimeout(() => {
         document.getElementById("Restart").classList.remove("pressed")
     }, 400);
+})
+
+document.getElementById("start").addEventListener("click", function(){
+    document.getElementById("starting").style.display="none"
+    document.getElementById("container").style.display="block"
 })
