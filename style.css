@@ -36,7 +36,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 button {
@@ -79,7 +78,6 @@ button {
 .overlay-content {
     width: 100%;
     height: 30%;
-    /* max-width: 400px; */
     padding: 20px;
     text-align: center;
     border: none;
@@ -124,8 +122,6 @@ button {
     background-color: black;
 }
 
-
-
 #start{
     background-color: rgb(231, 231, 235);
     padding: 20px;
@@ -155,13 +151,6 @@ button {
     color: white;
     letter-spacing: 10px;
 }
-
-/* #t1{
-    background-color: gray;
-}
-#t2{
-    background-color: black;
-} */
 
 #Restart{
     background-color: rgb(51, 51, 51);
@@ -197,13 +186,6 @@ button {
     justify-content: center;
     align-items: center;
     margin-top: 170px;
-}
-
-label{
-    font-size: 26px;
-    color: white;
-    font-family: "Balibrush";
-    padding: 10px 0;
 }
 
 input{

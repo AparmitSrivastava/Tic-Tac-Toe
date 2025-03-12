@@ -182,5 +182,9 @@ document.querySelector(".disclaimer").style.letterSpacing="2px"
 document.querySelector(".disclaimer").style.fontFamily="Balibrush"
 document.querySelector(".disclaimer").style.fontSize="19px"
 
-
-
+document.querySelectorAll("label").forEach(label => {
+    label.style.fontSize = "26px";
+    label.style.color = "white";
+    label.style.fontFamily = "Balibrush";
+    label.style.padding = "10px 0";
+});
