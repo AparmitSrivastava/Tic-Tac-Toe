@@ -217,3 +217,10 @@ input{
     text-align: center;
     border: none;
 }
+
+.disclaimer{
+    color: white;
+    font-size: 18px;
+    font-family: "Balibrush";
+    letter-spacing: 2px;
+}
