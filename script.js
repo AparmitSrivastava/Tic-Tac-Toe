@@ -176,3 +176,11 @@ document.getElementById("start").addEventListener("click", function(){
 
 document.getElementById("Restart").style.marginTop="70px"
 document.getElementById("Restart").style.padding="20px"
+
+document.querySelector(".disclaimer").style.color="white"
+document.querySelector(".disclaimer").style.letterSpacing="2px"
+document.querySelector(".disclaimer").style.fontFamily="Balibrush"
+document.querySelector(".disclaimer").style.fontSize="19px"
+
+
+
