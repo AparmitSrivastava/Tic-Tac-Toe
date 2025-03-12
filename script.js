@@ -1,10 +1,16 @@
+let playeronename=document.getElementById("playeronename")
+let playertwoname=document.getElementById("playertwoname")
+
+
 let player = (name) => {
-    return { name }
+    return {name}
 }
 
 let array = [[-1, -1, -1], [-1, -1, -1], [-1, -1, -1]]
 let count = 1
 const boxes = document.querySelectorAll(".box");
+let playerone
+let playertwo
 
 
 const game = (() => {
@@ -59,11 +65,11 @@ const game = (() => {
         let message = "";
 
         if (res === 1) {
-            message = "X has won the game!";
+            message = `${playerone.name} has won the game`
         } else if (res === 0) {
-            message = "O has won the game!";
+            message = `${playertwo.name} has won the game !`
         } else {
-            message = "It's a Draw!";
+            message = "Its a Draw!";
         }
         document.getElementById("overlay").style.display = "flex";
         document.getElementById("winnerName").innerText = message;
@@ -164,6 +170,8 @@ document.getElementById("Restart").addEventListener("click", function () {
 document.getElementById("start").addEventListener("click", function(){
     document.getElementById("starting").style.display="none"
     document.getElementById("container").style.display="block"
+    playerone = player((playeronename.value || "player 1"))
+    playertwo = player((playertwoname.value || "player 2"))
 })
 
 document.getElementById("Restart").style.marginTop="70px"

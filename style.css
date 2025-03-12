@@ -91,13 +91,13 @@ button {
 }
 
 #winnerName{
-    font-size: 50px;
+    font-size: 40px;
     font-family: "OceanRushDEMO";
     border: 2px solid white;
     border-radius: 10px;
     color: white;
     padding: 20px 55px;
-    letter-spacing: 15px;
+    letter-spacing: 12px;
     width: 60%;
     background-color: rgb(45, 45, 45);
 }
@@ -120,15 +120,18 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #0f0f0f;
+    flex-direction: column;
+    background-color: black;
 }
+
+
 
 #start{
     background-color: rgb(231, 231, 235);
-    padding: 40px;
+    padding: 20px;
     border-radius: 40px;
     font-family: "OceanRushDEMO";
-    font-size: 50px;
+    font-size: 40px;
     transition: transform 0.5s cubic-bezier(0.24, 0.01, 0.15, 0.99);
     border: none;
 }
@@ -153,6 +156,13 @@ button {
     letter-spacing: 10px;
 }
 
+/* #t1{
+    background-color: gray;
+}
+#t2{
+    background-color: black;
+} */
+
 #Restart{
     background-color: rgb(51, 51, 51);
     color: white;
@@ -171,4 +181,39 @@ button {
 .blur {
     filter: blur(5px);
     pointer-events: none; /* Prevent interactions when blurred */
+}
+
+
+#p1,#p2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin:0 10vw;
+}
+
+#player-details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 170px;
+}
+
+label{
+    font-size: 26px;
+    color: white;
+    font-family: "Balibrush";
+    padding: 10px 0;
+}
+
+input{
+    background-color: rgb(34, 35, 34);
+    width: 40vh;
+    height: 4vh;
+    color: white;
+    font-family: "Balibrush";
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-align: center;
+    border: none;
 }
