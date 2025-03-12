@@ -5,3 +5,5 @@ Tech used -
 - HTML
 - CSS
 - JavaScript
+
+Live - https://aparmitsrivastava.github.io/Tic-Tac-Toe/
