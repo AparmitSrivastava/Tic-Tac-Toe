@@ -8,7 +8,6 @@ Tech used -
 
 ## Features
  - Two-player mode
- - Winner detection with a highlight
  - Reset functionality to restart the game
  - User-friendly interface
 
