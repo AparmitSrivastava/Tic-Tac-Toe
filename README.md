@@ -6,7 +6,7 @@ Tech used -
 - CSS
 - JavaScript
 
-#Features
+# Features
  - Two-player mode
  - Winner detection with a highlight
  - Reset functionality to restart the game
