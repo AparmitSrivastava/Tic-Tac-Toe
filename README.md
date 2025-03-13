@@ -1,5 +1,5 @@
 # Tic-Tac-Toe
-I m making a tic tac toe game , its going tough for me right now , but i hope i'll make it a good one.
+I m making a tic tac toe game , its challenging..., but i hope i'll make it a good one.
 
 Tech used - 
 - HTML
