@@ -6,4 +6,11 @@ Tech used -
 - CSS
 - JavaScript
 
-Live - https://aparmitsrivastava.github.io/Tic-Tac-Toe/
+#Features
+ - Two-player mode
+ - Winner detection with a highlight
+ - Reset functionality to restart the game
+ - User-friendly interface
+
+# Demo
+Live Demo - https://aparmitsrivastava.github.io/Tic-Tac-Toe/
