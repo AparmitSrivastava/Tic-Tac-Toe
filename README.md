@@ -9,7 +9,7 @@ Tech used -
 ## Features
  - Two-player mode
  - Reset functionality to restart the game
- - User-friendly interface
+ - User friendly interface
 
 ## Demo
 Live Demo - https://aparmitsrivastava.github.io/Tic-Tac-Toe/
