@@ -11,5 +11,6 @@ Tech used -
  - Reset functionality to restart the game
  - User friendly interface
 
-## Demo
+## Demo -
 Live Demo - https://aparmitsrivastava.github.io/Tic-Tac-Toe/
+
